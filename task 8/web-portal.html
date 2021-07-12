@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <script>
+        function lw() {
+            var host = '235';
+            var cmd = document.getElementById("plate-no").value;
+            var xhr = new XMLHttpRequest();
+
+            xhr.open("GET", `http://${host}/cgi-bin/web-portal.py?plate-no=${cmd}`, true);
+            xhr.send();
+
+            xhr.onload = function () {
+                var output = xhr.responseText;
+                document.getElementById("output").innerHTML = output;
+            }
+        }
+    </script>
+    <style>
+        :root {
+            /*  Black */
+            --left-color: #FE636B;
+            /*  Red  */
+            --right-color: #FFC271;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            letter-spacing: 1.5px;
+            color: white;
+            background-image: linear-gradient(to right, var(--left-color), var(--right-color));
+        }
+
+        .container {
+            width: 60%;
+            height: 65%;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 2px 10px 40px rgba(22, 20, 19, 0.4);
+            padding: 8px 8px;
+            float: left;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            flex: 1;
+        }
+
+        input[type=text],
+        select {
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #dcdcdc;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        input[type=text]:focus {
+            border: 2px solid var(--right-color);
+        }
+
+        #submit {
+            width: 30%;
+            height: 8%;
+            background-color: var(--left-color);
+            color: white;
+            font-size: 14px;
+            padding: 10px 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        #submit:hover {
+            background-color: var(--right-color);
+        }
+
+        h1 {
+            font-size: 42px;
+            text-shadow: 2px 2px 2px rgba(22, 20, 19, 0.4);
+            color: var(--left-color);
+        }
+
+        div#output {
+            width: 99%;
+            padding: 5px 5px;
+            margin: 5px 0px;
+            border-radius: 8px;
+            background-color: #fff;
+            text-shadow: 0px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <center>
+
+            <img src="https://media1.tenor.com/images/2eabab6b642b32295368a6b110bfd78e/tenor.gif?itemid=14241335"
+                width="250" height="200">
+
+            <h1>Enter the Plate Number</h1>
+            <input type="text" id="plate-no" placeholder="Enter vehicle registration number...">
+            <br><br>
+            <button id="submit" onclick="lw()">Show Details</button>
+            <br>
+
+            <div id="output">
+            </div>
+
+        </center>
+    </div>
+
+</body>
+
+</html>
