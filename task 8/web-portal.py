@@ -22,7 +22,7 @@ import requests
 import xmltodict
 import json
 def get_vehicle_info(plate_number):
-    r = requests.get("https://www.regcheck.org.uk/api/reg.asmx/CheckIndia?RegistrationNumber={}&username=sammy12".format(plate_number))
+    r = requests.get("https://www.regcheck.org.uk/api/reg.asmx/CheckIndia?RegistrationNumber={}&username=rto_user1".format(plate_number))
     data = xmltodict.parse(r.content)
     jdata = json.dumps(data)
     df = json.loads(jdata)
