@@ -90,24 +90,6 @@ class _MyHomePageState extends State<MyHomePage> {
     Data vehType = Data(title: "Vehicle Type", value: output['VehicleType']);
     Data location = Data(title: "Location", value: output['Location']);
 
-    // print(description);
-    // print(registrationYear);
-    // print(company);
-    // print(model);
-    // print(variant);
-    // print(engineSize);
-    // print(seats);
-    // print(inum);
-    // print(enginenum);
-    // print(fueltype);
-    // print(regiDate);
-    // print(owner);
-    // print(fitness);
-    // print(insurance);
-    // print(pucc);
-    // print(vehType);
-    // print(location);
-
     setState(() {
       _vehicleData.add(description);
       _vehicleData.add(registrationYear);
