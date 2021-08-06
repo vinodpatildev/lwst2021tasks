@@ -42,14 +42,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
     try {
       var url = Uri.http('13.233.153.171', '/cgi-bin/k8s.py', {
-      'command': enteredCommand,
-    });
+        'command': enteredCommand,
+      });
 
-    var result = await http.get(url);
+      var result = await http.get(url);
 
-    setState(() {
-      _Output.add(result.body);
-    });
+      setState(() {
+        _Output.add(result.body);
+      });
     } catch (e) {
       print(e);
     }
@@ -79,9 +79,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           labelText: "Kubernetes Command",
                         ),
                         controller: commandController,
-                        keyboardType: TextInputType.number,
-                        onSubmitted: (_) => getKubeOutput,
-                        
+                        keyboardType: TextInputType.text,
+                        onSubmitted: (_) {
+                          getKubeOutput();
+                          commandController.value = 
+                          commandController.value.copyWith(
+                            text: "",
+                            selection: TextSelection.collapsed(offset: 0),
+                          );
+                        },
                       ),
                       TextButton(
                         onPressed: getKubeOutput,

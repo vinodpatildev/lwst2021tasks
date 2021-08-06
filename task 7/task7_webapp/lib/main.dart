@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: MyHomePage(title: 'Web Kubernetes'),
+      home: MyHomePage(title: 'Web Docker'),
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
         fontFamily: 'Quicksand',
@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     try {
-      var url = Uri.http('13.233.153.171', '/cgi-bin/k8s.py', {
+      var url = Uri.http('13.235.73.200', '/cgi-bin/k8s.py', {
       'command': enteredCommand,
     });
 
@@ -76,11 +76,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       TextField(
                         decoration: InputDecoration(
-                          labelText: "Kubernetes Command",
+                          labelText: "Docker Command",
                         ),
                         controller: commandController,
                         keyboardType: TextInputType.number,
-                        onSubmitted: (_) => getKubeOutput,
+                        onSubmitted: (_) {
+                          getKubeOutput();
+                          commandController.value = 
+                          commandController.value.copyWith(
+                            text: "",
+                            selection: TextSelection.collapsed(offset: 0),
+                          );
+                        },
                         
                       ),
                       TextButton(
