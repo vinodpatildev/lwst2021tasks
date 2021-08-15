@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "140191829858",
+    "project_id": "expense-app-9cd48",
+    "storage_bucket": "expense-app-9cd48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140191829858:android:3052fc11d719b4e0aa663b",
+        "android_client_info": {
+          "package_name": "com.vinod.expense_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140191829858-qpoqaugub040ge2onp9qn6mnnuo92a9q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTYLaucqxEUV07Sm9LBIa72P_SSl6ENhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "140191829858-qpoqaugub040ge2onp9qn6mnnuo92a9q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
